@@ -1,0 +1,28 @@
+{{#each groceries as |grocery|}}
+  {{log grocery}}
+  <section data-id="{{grocery.id}}">
+    <h6>Name:</h6>
+    <h3>
+      {{grocery.name}}
+    </h2>
+    <h6>Category</h6>
+    <p>
+      {{#if grocery.food_type}}
+        {{grocery.food_type}}
+      {{else}}
+        No category provided.
+      {{/if}}
+    </p>
+    <h6>Amount</h6>
+    <p>
+      {{#if grocery.amount}}
+        {{grocery.amount}}
+      {{else}}
+        No category provided.
+      {{/if}}
+    </p>
+
+    <button data-id="{{grocery.id}}" class="btn btn-danger delete">Remove</button>
+  </section>
+
+{{/each}}
