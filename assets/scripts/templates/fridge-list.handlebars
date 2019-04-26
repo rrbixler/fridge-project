@@ -22,6 +22,14 @@
       {{/if}}
     </p>
 
+    <form data-id="{{grocery.id}}" method="patch" class="update-grocery">
+      <input type="text" name="grocery[name]" placeholder="food">
+      <input type="text" name="grocery[amount]" placeholder="amount">
+      <input type="text" name="grocery[food_type]" placeholder="category">
+      <input type="submit" name="update" class="updateGrocery">
+    </form>
+
+    <!-- <button data-id="{{grocery.id}}" class="btn btn-danger update">Update</button> -->
     <button data-id="{{grocery.id}}" class="btn btn-danger delete">Remove</button>
   </section>
 

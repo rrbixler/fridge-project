@@ -22,9 +22,19 @@ const onGetGroceries = function (event) {
 
 const onDeleteGrocery = (event) => {
   event.preventDefault()
-  const id = $(event.target).closest('section').data('id')
+  const id = $(event.target).data('id')
   console.log(id)
   api.deleteGrocery(id)
+    .then(() => onGetGroceries(event))
+    .catch(ui.failure)
+}
+
+const onUpdateGrocery = (event) => {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  const id = $(event.target).data('id')
+  console.log(data)
+  api.updateGrocery(data, id)
     .then(() => onGetGroceries(event))
     .catch(ui.failure)
 }
@@ -33,6 +43,7 @@ const addHandlers = function () {
   $('#create-grocery').on('submit', onCreateGrocery)
   $('#index-groceries').on('submit', onGetGroceries)
   $('#content').on('click', '.delete', onDeleteGrocery)
+  $('#content').on('submit', onUpdateGrocery)
 }
 
 module.exports = {

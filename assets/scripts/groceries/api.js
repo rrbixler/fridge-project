@@ -15,20 +15,35 @@ const createGrocery = function (data) {
 
 const getGroceries = function () {
   return $.ajax({
-    url: config.apiUrl + '/groceries/',
+    url: config.apiUrl + 'groceries/',
     method: 'GET'
   })
 }
 
 const deleteGrocery = function (id) {
   return $.ajax({
-    url: config.apiUrl + `/groceries/${id}`,
-    method: 'DELETE'
+    url: config.apiUrl + `groceries/${id}`,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const updateGrocery = function (data, id) {
+  return $.ajax({
+    url: config.apiUrl + `groceries/${id}`,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
   })
 }
 
 module.exports = {
   createGrocery,
   getGroceries,
-  deleteGrocery
+  deleteGrocery,
+  updateGrocery
 }
