@@ -15,6 +15,13 @@ const indexGrocerySuccess = function (data) {
   $('.content').html(showFridgeHtml)
 }
 
+const showGrocerySuccess = function (data) {
+  console.log('show grocery successfully!', data)
+  const showGroceryHtml = showFridgeTemplate({ groceries: data.groceries.food_type })
+  const catGrocery = showGroceryHtml.food_type.filter(`${data.food_type}`)
+  $('.content').html(catGrocery)
+}
+
 const indexGroceryFailure = function (data) {
   console.log('index index failed --', data)
 }
@@ -23,5 +30,6 @@ module.exports = {
   createGrocerySuccess,
   createGroceryFailure,
   indexGrocerySuccess,
-  indexGroceryFailure
+  indexGroceryFailure,
+  showGrocerySuccess
 }

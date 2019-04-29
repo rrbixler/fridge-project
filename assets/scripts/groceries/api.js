@@ -16,7 +16,21 @@ const createGrocery = function (data) {
 const getGroceries = function () {
   return $.ajax({
     url: config.apiUrl + 'groceries/',
-    method: 'GET'
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const showGrocery = function (data, id) {
+  return $.ajax({
+    url: config.apiUrl + `groceries/${id}`,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
   })
 }
 
@@ -44,6 +58,7 @@ const updateGrocery = function (data, id) {
 module.exports = {
   createGrocery,
   getGroceries,
+  showGrocery,
   deleteGrocery,
   updateGrocery
 }

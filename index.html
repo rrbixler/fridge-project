@@ -12,7 +12,7 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>Grocery List</h1>
       <div class="messages"></div>
       <form id="sign-up">
         <input type="email" name="credentials[email]" placeholder="email" required>
@@ -41,7 +41,14 @@
         <input type="submit" value="add to fridge!">
       </form>
 
-      <form id="index-groceries">
+      <form id="show-grocery">
+        <!-- <input type="text" name="grocery[name]" placeholder="food">
+        <input type="text" name="grocery[amount]" placeholder="amount"> -->
+        <input type="text" name="grocery[food_type]" placeholder="category">
+        <input type="submit" value="show Grocery!">
+      </form>
+
+      <form id="index-groceries" action="http://localhost:4741/" method="patch">
         <input type="submit" value="see fridge!">
       </form>
 
