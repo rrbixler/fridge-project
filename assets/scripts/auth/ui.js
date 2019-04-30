@@ -28,6 +28,7 @@ const signInSuccess = function (data) {
   setTimeout(() => {
     $('.messages').text('').hide()
   }, 2000)
+  $('.hidden').show()
 }
 
 const signInFailure = function (data) {
@@ -58,14 +59,14 @@ const signOutSuccess = function () {
   $('form').trigger('reset')
   $('#change-password').hide()
   $('#sign-out').hide()
-  $('#create-game').hide()
-  $('#stats').hide()
   $('#sign-up').show()
   $('#sign-in').show()
+  $('#content').empty()
   $('.messages').text(`see you next time!`).show()
   setTimeout(() => {
     $('.messages').text(' ').hide()
   }, 2000)
+  $('.hidden').hide()
 }
 
 const signOutFailure = function () {

@@ -26,10 +26,15 @@ const indexGroceryFailure = function (data) {
   console.log('index index failed --', data)
 }
 
+const clearFridge = () => {
+  $('.content').empty()
+}
+
 module.exports = {
   createGrocerySuccess,
   createGroceryFailure,
   indexGrocerySuccess,
   indexGroceryFailure,
-  showGrocerySuccess
+  showGrocerySuccess,
+  clearFridge
 }

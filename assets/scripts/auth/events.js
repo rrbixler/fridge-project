@@ -44,6 +44,12 @@ const addHandlers = function () {
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
+  $('#change-password').hide()
+  $('#sign-out').hide()
+  $('#show-grocery').hide()
+  $('#clearFridgeButton').hide()
+  $('#index-groceries').hide()
+  $('#create-grocery').hide()
 }
 
 module.exports = {

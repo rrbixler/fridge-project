@@ -5,7 +5,8 @@ const ui = require('./ui')
 
 const onCreateGrocery = function (event) {
   event.preventDefault()
-
+  // $('.modal-open').removeClass()
+  // $('.fade').hide()
   const data = getFormFields(event.target)
   api.createGrocery(data)
     .then(ui.createGrocerySuccess)
@@ -41,8 +42,15 @@ const onDeleteGrocery = (event) => {
     .catch(ui.failure)
 }
 
+const onClearFridge = (event) => {
+  event.preventDefault()
+  ui.clearFridge()
+}
+
 const onUpdateGrocery = (event) => {
   event.preventDefault()
+  $('.modal-open').removeClass()
+  $('.fade').hide()
   const data = getFormFields(event.target)
   const id = $(event.target).data('id')
   console.log(data)
@@ -54,8 +62,9 @@ const onUpdateGrocery = (event) => {
 const addHandlers = function () {
   $('#create-grocery').on('submit', onCreateGrocery)
   $('#index-groceries').on('submit', onGetGroceries)
+  $('#clearFridgeButton').on('click', onClearFridge)
   $('#content').on('click', '.delete', onDeleteGrocery)
-  $('#content').on('submit', onUpdateGrocery)
+  $('#content').on('submit', '.update-grocery', onUpdateGrocery)
   $('#show-grocery').on('submit', onShowGrocery)
 }
 

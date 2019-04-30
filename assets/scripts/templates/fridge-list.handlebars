@@ -1,6 +1,7 @@
 {{#each groceries as |grocery|}}
   {{log grocery}}
   <section data-id="{{grocery.id}}">
+    <div class="card text-white bg-dark col-6">
     <h6>Name:</h6>
     <h3>
       {{grocery.name}}
@@ -22,15 +23,50 @@
       {{/if}}
     </p>
 
-    <form data-id="{{grocery.id}}" method="patch" class="update-grocery">
-      <input type="text" name="grocery[name]" placeholder="food">
-      <input type="text" name="grocery[amount]" placeholder="amount">
-      <input type="text" name="grocery[food_type]" placeholder="category">
-      <input type="submit" name="update" class="updateGrocery">
-    </form>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-sm col-3 btn-outline-success" data-toggle="modal" data-target="#edit-grocery-{{grocery.id}}">
+      Update Grocery
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="edit-grocery-{{grocery.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Update Food</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form data-id="{{grocery.id}}" method="patch" class="update-grocery">
+              <input type="text" name="grocery[name]" placeholder="food">
+              <input type="text" name="grocery[amount]" placeholder="amount">
+
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">Grocery Category</label>
+                    <select class="form-control" type="text" name="grocery[food_type]" id="exampleFormControlSelect1">
+                      <option>Dairy</option>
+                      <option>Protein</option>
+                      <option>Fruit</option>
+                      <option>Vegggies</option>
+                      <option>Carbs</option>
+                      <option>Drinks</option>
+                    </select>
+                </div>
+              <button type="submit" value="update" class="updateGrocery col-2 btn-outline-info btn-sm">EDIT</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" value="update" class="btn-outline-warning btn-sm" data-dismiss="modal">close</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- <button data-id="{{grocery.id}}" class="btn btn-danger update">Update</button> -->
-    <button data-id="{{grocery.id}}" class="btn btn-danger delete">Remove</button>
+    <button data-id="{{grocery.id}}" class="btn btn-outline-danger col-3 btn-sm delete">Remove</button>
+  </div>
   </section>
 
 {{/each}}
