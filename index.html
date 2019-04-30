@@ -10,65 +10,78 @@
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+      <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet">
     </head>
     <body>
 
       <nav class="navbar navbar-dark bg-dark">
-  <!-- Navbar content -->
+        <form id="sign-in" class="row">
+          <input type="email" class="form-control col-md-3" name="credentials[email]" placeholder="email" required>
+          <input type="password" class="form-control col-md-3" name="credentials[password]" placeholder="password">
+          <input type="submit" class = "btn btn-outline-info btn-sm" value="sign in">
+        </form>
+        <form id="sign-up" class="row">
+          <input type="email" class="form-control col-md-3" name="credentials[email]" placeholder="email" required>
+          <input type="password" class="form-control col-md-3" name="credentials[password]" placeholder="password">
+          <input type="password" class="form-control col-md-4" name="credentials[password_confirmation]" placeholder="password confirmation">
+          <input type="submit" class = "btn btn-outline-info btn-sm" value="sign up">
+        </form>
+        <form id="sign-out" class="row">
+          <input type="submit" class = "btn btn-outline-info btn-sm" value="sign out">
+        </form>
+        <form id="change-password" class="row">
+          <input type="password" class="form-control col-md-4" name="passwords[old]" placeholder="oldpassword">
+          <input type="password" class="form-control col-md-4" name="passwords[new]" placeholder="newpassword">
+          <input type="submit" class = "btn btn-outline-info btn-sm" value="change password">
+        </form>
       </nav>
 
-      <h1>Grocery List</h1>
-      <div class="messages form-group"></div>
-      <form id="sign-up">
-        <input type="email" class="form-control col-md-4" name="credentials[email]" placeholder="email" required>
-        <input type="password" class="form-control col-md-4" name="credentials[password]" placeholder="password">
-        <input type="password" class="form-control col-md-4" name="credentials[password_confirmation]" placeholder="password confirmation">
-        <input type="submit" class = "btn btn-outline-info btn-sm" value="sign up">
-      </form>
-      <form id="sign-in">
-        <input type="email" class="form-control col-md-4" name="credentials[email]" placeholder="email" required>
-        <input type="password" class="form-control col-md-4" name="credentials[password]" placeholder="password">
-        <input type="submit" class = "btn btn-outline-info btn-sm" value="sign in">
-      </form>
-      <form id="change-password">
-        <input type="password" class="form-control col-md-4" name="passwords[old]" placeholder="oldpassword">
-        <input type="password" class="form-control col-md-4" name="passwords[new]" placeholder="newpassword">
-        <input type="submit" class = "btn btn-outline-info btn-sm" value="change password">
-      </form>
-      <form id="sign-out">
-        <input type="submit" class = "btn btn-outline-info btn-sm" value="sign out">
-      </form>
+      <h1><a id="one">g</a><a id="two"> r</a><a id="eight"> o</a><a id="five"> c</a><a id="three"> e</a><a id="one"> r</a><a id="four"> y </a>
+         <a id="three">l</a> <a id="six">i</a> <a id="two">s</a> <a id="one"> t</a>
+       </h1>
 
-      <form id="create-grocery" class ="hidden" action="http://localhost:4741/" method="post">
+
+      <div class="messages form-group"></div>
+
+<div class="container">
+      <form id="create-grocery" class ="hidden row" action="http://localhost:4741/" method="post">
         <input type="text" class="form-control col-md-4" name="grocery[name]" placeholder="food">
         <input type="text" class="form-control col-md-4" name="grocery[amount]" placeholder="amount">
-        <input type="text" name="grocery[food_type]" placeholder="category">
-          <div class="form-group col-md-4">
-
-              <select class="form-control col-md-4" type="text" name="grocery[food_type]">
-              <option>Food Category</option>
-                <option>Dairy</option>
-                <option>Protein</option>
-                <option>Fruit</option>
-                <option>Vegggies</option>
-                <option>Carbs</option>
-                <option>Drinks</option>
-              </select>
+        <div class="form-group">
+            <select class="form-control col-md-4" type="text" name="grocery[food_type]">
+            <option>Food Category</option>
+            <option value="dairy">dairy</option>
+            <option value="protein">protein</option>
+            <option value="fruit">fruit</option>
+            <option value="veggies">veggies</option>
+            <option value="carbs">carbs</option>
+            <option value="drinks">drinks</option>
+            </select>
           </div>
-        <input type="submit" class = "btn btn-outline-info btn-sm" value="add to fridge!">
+        <input type="submit" class = "btn btn-outline-info btn" value="add to fridge!">
       </form>
 
+      <form data-id="{grocery.food_type}" id="show-category" class ="col-md-4 row category hidden">
+        <div class="form-group">
+          <select class="form-control" type="text" name="grocery[food_type]">
+            <option>Food Category</option>
+            <option value="dairy">dairy</option>
+            <option value="protein">protein</option>
+            <option value="fruit">fruit</option>
+            <option value="veggies">veggies</option>
+            <option value="carbs">carbs</option>
+            <option value="drinks">drinks</option>
+          </select>
+        </div>
+        <input type="submit" class="form-control btn btn-outline-info" class = "btn btn-outline-info btn-sm" value="show Grocery!">
+      </form>
 
-      <!-- <form id="show-grocery" class ="hidden">
-        <input type="text" class="form-control col-md-4" name="grocery[food_type]" placeholder="category">
-        <input type="submit" class="form-control col-md-4" class = "btn btn-outline-info btn-sm" value="show Grocery!">
-      </form> -->
+      <form id="index-groceries" class="hidden row" action="http://localhost:4741/" method="patch">
+        <input type="submit" class="col-md-4 btn btn-outline-info" value="See Fridge!">
+      </form>
 
-      <form id="index-groceries" class ="hidden" action="http://localhost:4741/" method="patch">
-        <input type="submit" class = "btn btn-outline-info btn-sm" value="see fridge!">
-
-      </form><button id="clearFridgeButton" class="hidden btn btn-outline-info">Hide Groceries</button>
-
+      <button id="clearFridgeButton" class="col-md-4 hidden row btn btn-outline-info">Hide Groceries</button>
+</div>
       <div id="content" class="content hidden">
       </div>
 

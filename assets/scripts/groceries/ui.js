@@ -17,9 +17,15 @@ const indexGrocerySuccess = function (data) {
 
 const showGrocerySuccess = function (data) {
   console.log('show grocery successfully!', data)
-  const showGroceryHtml = showFridgeTemplate({ groceries: data.groceries.food_type })
+  const showGroceryHtml = showFridgeTemplate({ groceries: data.groceries })
   const catGrocery = showGroceryHtml.food_type.filter(`${data.food_type}`)
   $('.content').html(catGrocery)
+}
+
+const showCategorySuccess = function (data) {
+  console.log('show category success!!', data)
+  const showCatHtml = showFridgeTemplate({ groceries: data.groceries })
+  $('.content').html(showCatHtml)
 }
 
 const indexGroceryFailure = function (data) {
@@ -36,5 +42,6 @@ module.exports = {
   indexGrocerySuccess,
   indexGroceryFailure,
   showGrocerySuccess,
-  clearFridge
+  clearFridge,
+  showCategorySuccess
 }

@@ -46,12 +46,13 @@
                 <div class="form-group">
                   <label for="exampleFormControlSelect1">Grocery Category</label>
                     <select class="form-control" type="text" name="grocery[food_type]" id="exampleFormControlSelect1">
-                      <option>Dairy</option>
-                      <option>Protein</option>
-                      <option>Fruit</option>
-                      <option>Vegggies</option>
-                      <option>Carbs</option>
-                      <option>Drinks</option>
+                      <option>Food Category</option>
+                      <option value="dairy">dairy</option>
+                      <option value="protein">protein</option>
+                      <option value="fruit">fruit</option>
+                      <option value="veggies">veggies</option>
+                      <option value="carbs">carbs</option>
+                      <option value="drinks">drinks</option>
                     </select>
                 </div>
               <button type="submit" value="update" class="updateGrocery col-2 btn-outline-info btn-sm">EDIT</button>
@@ -65,6 +66,8 @@
     </div>
 
     <!-- <button data-id="{{grocery.id}}" class="btn btn-danger update">Update</button> -->
+
+
     <button data-id="{{grocery.id}}" class="btn btn-outline-danger col-3 btn-sm delete">Remove</button>
   </div>
   </section>

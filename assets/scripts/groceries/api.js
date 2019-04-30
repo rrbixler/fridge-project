@@ -34,6 +34,16 @@ const showGrocery = function (data, id) {
   })
 }
 
+const getCategory = function (category) {
+  return $.ajax({
+    url: config.apiUrl + `search-groceries/${category}`,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 const deleteGrocery = function (id) {
   return $.ajax({
     url: config.apiUrl + `groceries/${id}`,
@@ -60,5 +70,6 @@ module.exports = {
   getGroceries,
   showGrocery,
   deleteGrocery,
-  updateGrocery
+  updateGrocery,
+  getCategory
 }
