@@ -2,10 +2,16 @@
 const showFridgeTemplate = require('../templates/fridge-list.handlebars')
 
 const createGrocerySuccess = function (data) {
+  $('form').trigger('reset')
+  $('.messages').text(`Grocery added to fridge!`).show()
+  setTimeout(() => {
+    $('.messages').text(' ').hide()
+  }, 2000)
   console.log('created grocery successfully!', data)
 }
 
 const createGroceryFailure = function (data) {
+  $('form').trigger('reset')
   console.log('created grocery failed --', data)
 }
 

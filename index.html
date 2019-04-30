@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Fridge</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -40,11 +40,11 @@
          <a id="three">l</a> <a id="six">i</a> <a id="two">s</a> <a id="one"> t</a>
        </h1>
 
-
       <div class="messages form-group"></div>
 
 <div class="container">
-      <form id="create-grocery" class ="hidden row" action="http://localhost:4741/" method="post">
+
+      <form id="create-grocery" class ="hidden" action="http://localhost:4741/" method="post">
         <input type="text" class="form-control col-md-4" name="grocery[name]" placeholder="food">
         <input type="text" class="form-control col-md-4" name="grocery[amount]" placeholder="amount">
         <div class="form-group">
@@ -60,10 +60,15 @@
           </div>
         <input type="submit" class = "btn btn-outline-info btn" value="add to fridge!">
       </form>
+      <form id="index-groceries" class="hidden row" action="http://localhost:4741/" method="patch">
+        <input type="submit" class="col-md-4 btn btn-outline-info" value="See Fridge!">
+      </form>
 
-      <form data-id="{grocery.food_type}" id="show-category" class ="col-md-4 row category hidden">
+      <button id="clearFridgeButton" class="col-md-4 hidden row btn btn-outline-info">Hide Groceries</button>
+
+      <form data-id="{grocery.food_type}" id="show-category" class ="row category hidden">
         <div class="form-group">
-          <select class="form-control" type="text" name="grocery[food_type]">
+          <select class="form-control col-md-4" type="text" name="grocery[food_type]">
             <option>Food Category</option>
             <option value="dairy">dairy</option>
             <option value="protein">protein</option>
@@ -73,14 +78,10 @@
             <option value="drinks">drinks</option>
           </select>
         </div>
-        <input type="submit" class="form-control btn btn-outline-info" class = "btn btn-outline-info btn-sm" value="show Grocery!">
+        <input type="submit" class="col-md-4 form-control btn btn-outline-info" class = "btn btn-outline-info btn-sm" value="show Grocery!">
       </form>
 
-      <form id="index-groceries" class="hidden row" action="http://localhost:4741/" method="patch">
-        <input type="submit" class="col-md-4 btn btn-outline-info" value="See Fridge!">
-      </form>
 
-      <button id="clearFridgeButton" class="col-md-4 hidden row btn btn-outline-info">Hide Groceries</button>
 </div>
       <div id="content" class="content hidden">
       </div>

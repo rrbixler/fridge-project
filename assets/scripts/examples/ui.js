@@ -1,14 +1,17 @@
 'use strict'
 
 const createExampleSuccess = function (data) {
+
   console.log('created example successfully!', data)
 }
 
 const createExampleFailure = function (data) {
+  $('form').trigger('reset')
   console.log('created example failed --', data)
 }
 
 const indexExampleSuccess = function (data) {
+
   console.log('index example successfully!', data)
 }
 
