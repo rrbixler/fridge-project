@@ -22,7 +22,6 @@ const onGetGroceries = function (event) {
 const onShowGrocery = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log(data)
 
   api.showGrocery(data)
     .then(ui.showGrocerySuccess)
@@ -33,7 +32,6 @@ const onGetCategory = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   const category = data.grocery.food_type
-  console.log(category)
 
   api.getCategory(category)
     .then(ui.showCategorySuccess)
@@ -43,7 +41,6 @@ const onGetCategory = function (event) {
 const onDeleteGrocery = (event) => {
   event.preventDefault()
   const id = $(event.target).data('id')
-  console.log(id)
   api.deleteGrocery(id)
     .then(() => onGetGroceries(event))
     .catch(ui.failure)
@@ -60,7 +57,6 @@ const onUpdateGrocery = (event) => {
   $('.fade').hide()
   const data = getFormFields(event.target)
   const id = $(event.target).data('id')
-  console.log(data)
   api.updateGrocery(data, id)
     .then(() => onGetGroceries(event))
     .catch(ui.failure)

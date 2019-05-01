@@ -1,11 +1,11 @@
 {{#each groceries as |grocery|}}
   {{log grocery}}
   <section data-id="{{grocery.id}}">
-    <div class="card text-white bg-dark col-6">
-    <h6>Name:</h6>
-    <h3>
+    <div class="col-12 card text-white bg-dark col-6">
+    <h6>Grocery</h6><h3>
       {{grocery.name}}
-    </h2>
+    </h3>
+
     <h6>Category</h6>
     <p>
       {{#if grocery.food_type}}
@@ -14,7 +14,8 @@
         No category provided.
       {{/if}}
     </p>
-    <h6>Amount</h6>
+
+    <h6>Amoount</h6>
     <p>
       {{#if grocery.amount}}
         {{grocery.amount}}
@@ -23,8 +24,10 @@
       {{/if}}
     </p>
 
+<div class="container handlecontainer">
+  <div class="row">
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-sm col-3 btn-outline-success" data-toggle="modal" data-target="#edit-grocery-{{grocery.id}}">
+    <button type="button" class="btn btn-sm col-4 btn-outline-success" data-toggle="modal" data-target="#edit-grocery-{{grocery.id}}">
       Update Grocery
     </button>
 
@@ -68,8 +71,10 @@
     <!-- <button data-id="{{grocery.id}}" class="btn btn-danger update">Update</button> -->
 
 
-    <button data-id="{{grocery.id}}" class="btn btn-outline-danger col-3 btn-sm delete">Remove</button>
+    <button data-id="{{grocery.id}}" class="btn btn-outline-danger col-4 btn-sm delete">Remove</button>
   </div>
+</div>
+</div>
   </section>
 
 {{/each}}

@@ -1,129 +1,44 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
 
-# browser-template
+ ## Fridge Project
+ Front End: https://rrbixler.github.io/fridge-project/
+ Back End: https://rrbixler.github.io/fridge-project-api/
 
-A template for starting front-end projects. Webpack for `require` system, build
-pipeline, and development server. Boostrap and Handlebars.js included. No
-front-end frameworks included.
+ My app is a grocery tracking app with an end goal of returning a list of possible recipes you can make by using
+ just the groceries in your fridge.  You can enter the grocery with amount and a food category into the fridge, see all the items in the fridge, edit items, and delete them from the fridge.  You can also select a category of food and view all of the items according to that category.
 
-## Installation
+ ## Technologies Used
+ Rails, Handlebars, CSS, HTML, jQuery
 
-1. [Download](../../archive/master.zip) this template.
-    - **Do Not Fork And Clone**
-    - Click the "Clone or Download" button and select "Download Zip".
-1. Move to the `wdi/projects` directory, then unzip the template directory with
-    `unzip /Users/<user-name>/Downloads/browser-template-master.zip`.
-1. Rename the template directory from `browser-template-master` to
-    `<project-name>-client`.
-1. Empty [`README.md`](README.md) and fill with your own content.
-1. Replace all instances of `ga-wdi-boston.browser-template` with the name of
-    your project.
-    - You can search for all instances of text in Atom by pressing
-    `commant + shift + f` on Mac or `ctrl + shift + f` on WSL.
-1. Move into the new project and `git init`.
-1. Add all of the files in your project with the command `git add --all`.
-      - **Note: This is the only time you should run this command!**
-1. Commit all of your files with the command `git commit`.
-      - Your commit title should read `Initial commit`.
-1. Install dependencies with `npm install`.
-1. Create a new repository on [github.com](https://github.com),
-    _not GitHub Enterprise_.
-1. Name the new repository with the same name used on Step 3.
-1. Follow the instructions on your new repository's setup page. For details on
-   how to push to Github, refer to the section on Github entitled "…or push an existing
-   repository from the command line." Further documentation can be found [here](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/).
+ ## Unsolved Problems
+ I would like to have scaffolded out another table for recipes that uses the groceries resource to generate a recipe
 
-## Structure
+ ## Development Process
+The planning for this project went pretty smoothly for me.  It wasnt until I got tables scaffolded out that I ran into problems that I needed help fixing.  Most of the time when I needed help on my code it was most of the time typos and other small errors.  I really liked having control of hte back-end in this project and I feel like it went much quicker to create this app than it did for me to create tic tac toe.  I think reading the error messages in the console as well as reading the error messages in the terminal helped me to do a lot of my problem solving.
 
-### Scripts
+ ## User Stories
+  as a user I want to view a single grocery item
+  as a user I want to view all the groceries in my fridge
+  as a user I want to create a grocery item with a name and unit
+  as a user I want to edit the units of a grocery item, and the name maybe too
+  as a user I want to delete groceries from my fridge once I use them in a recipe
+  as a user I want to view list of recipes that i can make with a single grocery item
 
-Developers should store JavaScript files in [`assets/scripts`](assets/scripts).
-The "manifest" or entry-point is
-[`assets/scripts/app.js`](assets/scripts/app.js). In general, only
-application initialization goes in this file. It's normal for developers to
-start putting all code in this file, but encourage them to break out different
-responsibilities and use the `require` syntax put references where they're
-needed.
+  as a user I want to view a recipe
+  as a user I want to view a recipe I have most groceries for
+  as a user I want to view a list of all the recipes in the database
+  as a user I want to create a recipe with a name and description
+  as a user I want to delete a recipe
+  as a user I want to assign a multiple possible recipes to a grocery item
+  as a user i want to assign multiple grocery items to a possible recipe
 
-### Config
+  as a user I want to view a list of ingredients that I already have for a single recipe
+  as a user I want to create list of remaining ingredients that I need to buy in order to make a single recipe
+  as a user I want to view those lists at the same time.
+  as a user I want to view a list of recipes I can make based on groceries that I already have
+  as a user I want to create a list of ingredients for a single recipe
+  as a user I want to edit the ingredients list for a single recipe
+  as a user I want to delete an ingredient from of an ingredients list for a single recipe
 
-Developers should set `apiUrls.production` and `apiUrls.development` in
-[`assets/scripts/config.js`](assets/scripts/config.js).  With
-`apiUrls` set, developers may rely on `apiUrl` as the base for API
-URLs.
-
-### Styles
-
-Developers should store styles in [`assets/styles`](assets/styles) and load them
-from [`assets/styles/index.scss`](assets/styles/index.scss). Bootstrap version 3 is
-included in this template.
-
-### Forms and Using `getFormFields`
-
-Developers should use [getFormFields](get-form-fields.md) to retrieve form data
-to send to an API.
-
-### Deployment
-
-To deploy a browser-template based SPA, run `grunt deploy`.
-
-## Adding Images
-
-To add images to your project, you must store them in the `public` directory.
-To use the image in HTML or CSS, write the path to the image like this:
-
-```html
-<img src="public/cat.jpg">
-```
-or
-```css
-#my-cool-div {
-  background-image: url('public/cat.jpg')
-}
-```
-
-Note that there's no `./` or `/` in front of `public/filename.jpg`.
-
-## Adding Fonts
-
-To add custom fonts to your app, you can either use a CDN like Google Fonts, or
-you can download the fonts and save them in the `public` directory. If you use
-the former method, follow the directions on the website providing the fonts.
-
-For local fonts, put the files in `public`, and then import and use them in a
-`.scss` file like this:
-
-```scss
-@font-face {
-  font-family: 'Nature Beauty';
-  src: url('public/Nature-Beauty.ttf') format('truetype');
-}
-
-.element-with-custom-font {
-  font-family: 'Nature Beauty';
-}
-```
-
-## Tasks
-
-Developers should run these often!
-
-- `grunt nag` or just `grunt`: runs code quality analysis tools on your code
-    and complains
-- `grunt make-standard`: reformats all your code in the JavaScript Standard Style
-- `grunt <server|serve|s>`: generates bundles, watches, and livereloads
-- `grunt build`: place bundled styles and scripts where `index.html` can find
-    them
-- `grunt deploy`: builds and deploys master branch
-
-
-## Additional Resources
-
-- [Modern Javascript Explained for Dinosaurs](https://medium.com/@peterxjang/modern-javascript-explained-for-dinosaurs-f695e9747b70)
-- [Making Sense of Front End Build Tools](https://medium.freecodecamp.org/making-sense-of-front-end-build-tools-3a1b3a87043b)
-
-## [License](LICENSE)
-
-1. All content is licensed under a CC­BY­NC­SA 4.0 license.
-1. All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
+## Wireframes
+https://imgur.com/wl1IOUq
+https://imgur.com/QqpbZwA

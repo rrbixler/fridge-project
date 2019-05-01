@@ -1,22 +1,19 @@
 'use strict'
 
 const createExampleSuccess = function (data) {
-
-  console.log('created example successfully!', data)
+  $('form').trigger('reset')
 }
 
 const createExampleFailure = function (data) {
   $('form').trigger('reset')
-  console.log('created example failed --', data)
 }
 
 const indexExampleSuccess = function (data) {
-
-  console.log('index example successfully!', data)
+  $('form').trigger('reset')
 }
 
 const indexExampleFailure = function (data) {
-  console.log('index index failed --', data)
+  $('form').trigger('reset')
 }
 
 module.exports = {
