@@ -2,7 +2,7 @@
  ## Fridge Project
  - Front End: https://rrbixler.github.io/fridge-project/
  - https://rrbixler.github.io/fridge-project/
- - Back End: https://rrbixler.github.io/fridge-project-api/
+ - Back End: https://github.com/rrbixler/fridge-project-api
  - https://tranquil-plains-95557.herokuapp.com/
 
  My app is a grocery tracking app with an end goal of returning a list of possible recipes you can make by using
