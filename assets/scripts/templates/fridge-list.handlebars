@@ -1,6 +1,6 @@
 {{#each groceries as |grocery|}}
   <section data-id="{{grocery.id}}">
-    <div class="col-12 card text-white bg-dark col-6">
+    <div class="col-6 card grocery-card text-orange bg-outline-info col-6">
     <h6>Grocery</h6><h3>
       {{grocery.name}}
     </h3>
@@ -26,7 +26,7 @@
 <div class="container handlecontainer">
   <div class="row">
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-sm col-4 btn-outline-success" data-toggle="modal" data-target="#edit-grocery-{{grocery.id}}">
+    <button type="button" class="btn btn-sm col btn-outline-success" data-toggle="modal" data-target="#edit-grocery-{{grocery.id}}">
       Update Grocery
     </button>
 
@@ -70,7 +70,7 @@
     <!-- <button data-id="{{grocery.id}}" class="btn btn-danger update">Update</button> -->
 
 
-    <button data-id="{{grocery.id}}" class="btn btn-outline-danger col-4 btn-sm delete">Remove</button>
+    <button data-id="{{grocery.id}}" class="btn btn-outline-danger col btn-sm delete">Remove</button>
   </div>
 </div>
 </div>

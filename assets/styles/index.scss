@@ -48,38 +48,56 @@ h1 {
   text-shadow: 4px 4px rgba(0, 0, 0, .25);
   font-size: 61px;
 }
+
 #two {
   color: gold;
   text-shadow: 4px 4px rgba(0, 0, 0, .25);
   font-size: 59px;
 }
+
 #three {
   color: purple;
   text-shadow: 4px 4px rgba(0, 0, 0, .25);
   font-size: 64px;
 }
+
 #four {
   color: blue;
   text-shadow: 4px 4px rgba(0, 0, 0, .25);
   font-size: 64px;
 }
+
 #five {
   color: orange;
   text-shadow: 4px 4px rgba(0, 0, 0, .25);
   font-size: 61px;
 }
+
 #six {
   color: green;
   text-shadow: 4px 4px rgba(0, 0, 0, .25);
   font-size: 63px;
 }
+
 #seven {
   color: teal;
   text-shadow: 4px 4px rgba(0, 0, 0, .25);
   font-size: 60px;
 }
+
 #eight {
   color: pink;
   text-shadow: 4px 4px rgba(0, 0, 0, .25);
   font-size: 64px;
+}
+
+.grocery-card {
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
+}
+
+.text-orange {
+  color: orange;
+  text-shadow: none;
 }
